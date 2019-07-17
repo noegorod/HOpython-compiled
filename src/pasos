@@ -1,0 +1,15 @@
+1. Compilar ambos archivos como objetos separados
+
+	gcc -c arrays.c -o arrays.o
+	gcc -c add_two.c -o add_two.o
+
+2. Construir una librería dinámica que tenga ambos objetos
+
+	gcc -fPIC -c arrays.c
+	gcc -fPIC -c add_two.c
+	gcc -shared arrays.o add_two.o -o libdin.so
+
+3. Escribir un script en python que pruebe **todas** las funciones
+de la librería
+
+
